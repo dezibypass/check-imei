@@ -7,7 +7,7 @@ function Fn_submit() {
       return new Promise(resolve => {
          axios.request({
             url: "https://api.nabil.my.id/cekImeiKemenperin",
-            method: "POST",
+            method: "GET",
             data: "imei=" + document.getElementsByName("imei")[0].value
          }).then(hasil => {
             hasil = JSON.stringify(hasil.data);
