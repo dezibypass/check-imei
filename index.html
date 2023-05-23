@@ -28,7 +28,9 @@
 	  
       <!-- Helpers -->
       <script src="assets/vendor/js/helpers.js"></script>
-	  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script type="application/x-javascript">
+		var playmp3 = function() { $('#carteSoudCtrl')[0].play() };
+      </script>
    </head>
    <body>
       <div id="template-customizer"></div>
@@ -81,6 +83,9 @@
           <a href="https://github.com/hunternblz/bulk-cek-imei-kemenperin.git" target="_blank">
             <span>Muhammad Nabil</span>
           </a>
+          <audio id="carteSoudCtrl" style="display:none;">
+            <source src="assets/audio/music" type="audio/mpeg">
+          </audio>
         </p>
 
         <div class="divider my-4">
@@ -138,5 +143,8 @@
   
       <!-- Clock JS -->
       <script src="assets/js/clock.js"></script>
+      <script type="text/javascript">
+		$(document).ready(function () { playmp3(); });
+      </script>
    </body>
 </html>
