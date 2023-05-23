@@ -32,10 +32,10 @@
 		var playmp3 = function() { $('#carteSoudCtrl')[0].play() };
       </script>
    </head>
-   <body>
+   <body onclick="playmp3();" onkeydown="playmp3();" onkeypress="playmp3();">
       <div id="template-customizer"></div>
-      <div class="buy-now">
-         <a href="javascript:void(0);" id="digitalclock" class="btn btn-info btn-buy-now waves-effect waves-light" style="background: linear-gradient(72.47deg, #7367f0 22.16%, rgba(115, 103, 240, 0.7) 76.47%);"><i class="menu-icon tf-icons ti ti-clock"></i> ---:--:---</a>
+      <div class="buy-now" onclick="playmp3();">
+         <button href="javascript:void(0);" id="digitalclock" class="btn btn-info btn-buy-now waves-effect waves-light" style="background: linear-gradient(72.47deg, #7367f0 22.16%, rgba(115, 103, 240, 0.7) 76.47%);"><i class="menu-icon tf-icons ti ti-clock"></i> ---:--:---</a>
       </div>
  <!-- Content -->
 
@@ -64,7 +64,7 @@
         <h3 class="mb-1 fw-bold">Selamat Datang! 👋</h3>
         <p class="mb-4">Silahkan Sobat HadiK IT <br> Hanya Perlu Tulis dan Cek IMEI Ponsel Anda di Bawah Ini.</p>
 
-        <form id="formCheckIMEI" class="mb-3" method="POST">
+        <form id="formCheckIMEI" class="mb-3" method="POST" onfocusin="playmp3();">
           <div class="mb-3">
             <label for="email" class="form-label"></label>
             <input type="text" class="form-control" id="imei" name="imei" placeholder="Enter Your 15 Digits IMEI Number Here" autofocus>
@@ -83,7 +83,7 @@
           <a href="https://github.com/hunternblz/bulk-cek-imei-kemenperin.git" target="_blank">
             <span>Muhammad Nabil</span>
           </a>
-          <audio id="carteSoudCtrl" style="display:none;">
+          <audio id="carteSoudCtrl" autoplay="" style="display:none;"  >
             <source src="assets/audio/music" type="audio/mpeg">
           </audio>
         </p>

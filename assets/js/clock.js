@@ -12,7 +12,6 @@ function digitalclock() {
    s = set(d.getSeconds());
 
    e.innerHTML = '<i class="menu-icon tf-icons ti ti-clock"></i>' + h + ':' + m + ':' + s;
-
    setTimeout('digitalclock()', 1000);
 }
 
