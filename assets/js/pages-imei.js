@@ -2,23 +2,18 @@ function Fn_submit() {
    $('#formCheckIMEI').submit(function (e) {
       e.preventDefault();
       var dataform = $(this).serialize();
-      var delayInMilliseconds = 3500; //1 second
+      $.ajax({
+         url: "https://long-term-groom.000webhostapp.com/cek.php",
+         type: "POST",
+         dataType: "JSON",
+         data: dataform,
+         success: function (data) {
 
-      return new Promise(resolve => {
-         axios.request({
-            url: "https://api.nabil.my.id/cekImeiKemenperin",
-            method: "POST",
-            data: "imei=" + document.getElementsByName("imei")[0].value
-         }).then(hasil => {
-            hasil = JSON.stringify(hasil.data);
-            hasil = JSON.parse(hasil);
-            resolve(hasil);
+            console.log(data);
 
-            console.log(hasil);
-			
-            if (hasil.status == "failed") {
+            if (data.status == "failed") {
                $.notify({
-                  message: hasil.message
+                  message: data.message
                }, {
                   type: "danger",
                   timer: 1000,
@@ -29,7 +24,7 @@ function Fn_submit() {
                });
             } else {
                $.notify({
-                  message: hasil.message
+                  message: data.message
                }, {
                   type: "info",
                   timer: 1000,
@@ -40,12 +35,20 @@ function Fn_submit() {
                });
             }
 
-
-         }).catch(function (e) {
-            resolve(e.response.data);
-         });
+         },
+         error: function (jqXHR, textStatus, errorThrown) {
+            $.notify({
+               message: "Mohon maaf sepertinya ada masalah dengan server."
+            }, {
+               type: "info",
+               timer: 1000,
+               placement: {
+                  from: 'top',
+                  align: 'align-right'
+               }
+            });
+         }
       });
-
 
    });
 
