@@ -1,12 +1,11 @@
 function Fn_submit() {
    $('#formCheckIMEI').submit(function (e) {
       e.preventDefault();
-      var dataform = $(this).serialize();
       $.ajax({
          url: "https://long-term-groom.000webhostapp.com/cek.php",
          type: "POST",
          dataType: "JSON",
-         data: dataform,
+         data: $(this).serialize();,
          success: function (data) {
 
             console.log(data);
