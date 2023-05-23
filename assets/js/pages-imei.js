@@ -1,6 +1,5 @@
-function Fn_submit() {
-   $('#formCheckIMEI').submit(function (e) {
-      e.preventDefault();
+$('#formCheckIMEI').submit(function (e) {
+e.preventDefault();
       $.ajax({
          url: "https://long-term-groom.000webhostapp.com/cek.php",
          type: "POST",
@@ -49,6 +48,5 @@ function Fn_submit() {
          }
       });
 
-   });
 
-}
+});
