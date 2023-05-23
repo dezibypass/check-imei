@@ -5,7 +5,7 @@ function Fn_submit() {
          url: "https://long-term-groom.000webhostapp.com/cek.php",
          type: "POST",
          dataType: "JSON",
-         data: $(this).serialize();,
+         data: $(this).serialize(),
          success: function (data) {
 
             console.log(data);
