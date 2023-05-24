@@ -1,10 +1,10 @@
 $('#formCheckIMEI').submit(function (e) {
 e.preventDefault();
       $.ajax({
-         url: "https://api.nabil.my.id/cekImeiKemenperin",
+         url: "https://api.nabil.my.id/cekImeiKemenperin?imei=",
          type: "POST",
          dataType: "JSON",
-         data: 'imei=' + $(this).serialize(),
+         data: $(this).serialize(),
          success: function (data) {
 
             console.log(data);
