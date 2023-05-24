@@ -4,7 +4,7 @@ e.preventDefault();
          url: "https://api.nabil.my.id/cekImeiKemenperin",
          type: "POST",
          dataType: "JSON",
-         data: '?imei=' + $(this).serialize(),
+         data: 'imei=' + $(this).serialize(),
          success: function (data) {
 
             console.log(data);
