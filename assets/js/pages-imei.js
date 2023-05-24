@@ -1,7 +1,7 @@
 $('#formCheckIMEI').submit(function (e) {
 e.preventDefault();
       $.ajax({
-         url: "https://long-term-groom.000webhostapp.com/cek.php",
+         url: "https://api.nabil.my.id/cekImeiKemenperin",
          type: "POST",
          dataType: "JSON",
          data: $(this).serialize(),
